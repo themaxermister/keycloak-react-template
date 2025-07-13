@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "2ead7a3b-9a74-4c95-acba-d7c76c190943",
+		"name": "KeyCloak 26",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22108112"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "sample-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Nut3156gKMYL4AXOhd14IPr39YUDMP3z",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"sample-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/userinfo",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Nut3156gKMYL4AXOhd14IPr39YUDMP3z",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Sample User",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "sample-client",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"sample-realm",
+						"protocol",
+						"openid-connect",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/logout?",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "sample-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Nut3156gKMYL4AXOhd14IPr39YUDMP3z",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJiNWNkZjQ1ZS0wOTcxLTRhY2MtOWVjYy0xZGUxYTkwNDkwNjMifQ.eyJleHAiOjE3NTIzMTE3NDYsImlhdCI6MTc1MjMwOTk0NiwianRpIjoiMzBlYWY3NjYtNzQwZC00ZmMyLWE3ODYtMDgzMjVkY2ZlZGMxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9zYW1wbGUtcmVhbG0iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3NhbXBsZS1yZWFsbSIsInN1YiI6IjEyZGVlY2FmLWRlYTktNDhjYi1hMTAwLTlkOWM4MzUxNTAwOSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJzYW1wbGUtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6Ijg1MzY4Njg5LTQ0YWMtNDMyZi1iY2E2LTU4OGIyOGYxYjExMyIsInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI4NTM2ODY4OS00NGFjLTQzMmYtYmNhNi01ODhiMjhmMWIxMTMifQ.vwcLnIhEST_sfzTmbXzOPL1kPW-62c-OVNFrWFBy0qE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/sample-realm/protocol/openid-connect/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"sample-realm",
+						"protocol",
+						"openid-connect",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
