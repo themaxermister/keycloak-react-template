@@ -1,0 +1,26 @@
+services:
+  wildfly:
+    image: quay.io/keycloak/keycloak:18.0.1
+    command: start-dev
+    ports:
+      - "0.0.0.0:8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    volumes:
+      - wildfly_data:/opt/keycloak/data
+  
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.3.1
+    command: start-dev
+    ports:
+      - "0.0.0.0:8081:8080"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+
+volumes:
+  wildfly_data:
+  keycloak_data:

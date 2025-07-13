@@ -1,0 +1,18 @@
+/* src/app/styles/globals.css */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #202123;
+    /* ChatGPT dark background */
+    color: #e6e6e6;
+    /* light text */
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

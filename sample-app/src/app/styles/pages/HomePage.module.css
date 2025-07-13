@@ -1,0 +1,19 @@
+.homePage {
+    background-color: #202123;
+    /* ChatGPT background */
+    min-height: 100vh;
+    color: #d0d0d0;
+    /* Light gray text */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2.75rem;
+    margin-top: 40px;
+    color: #ffffff;
+    /* White-ish heading */
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}

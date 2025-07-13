@@ -1,0 +1,29 @@
+.main {
+    background-color: #121212;
+    min-height: 100vh;
+    padding: 40px 24px;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    color: #bb86fc;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.loading {
+    color: #bbb;
+    font-style: italic;
+}
+
+.preformattedData {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    max-width: 900px;
+    overflow-x: auto;
+    box-shadow: 0 2px 10px rgba(187, 134, 252, 0.3);
+}
